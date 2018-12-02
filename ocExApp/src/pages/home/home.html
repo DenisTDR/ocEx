@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <button ion-button (click)="setAlgo('srt2')" *ngIf="selected != 'srt2'">Srt 2</button>
+    <button ion-button color="secondary" *ngIf="selected == 'srt2'">Srt 2</button>
+    <button ion-button (click)="setAlgo('srt4')" *ngIf="selected != 'srt4'">Srt 4</button>
+    <button ion-button color="secondary" *ngIf="selected == 'srt4'">Srt 4</button>
+    <button ion-button (click)="setAlgo('boothr4')" *ngIf="selected != 'boothr4'">Booth</button>
+    <button ion-button color="secondary" *ngIf="selected == 'boothr4'">Booth</button>
+  </div>
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">X</ion-label>
+        <ion-input placeholder="X" [(ngModel)]="model.x"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">Y</ion-label>
+        <ion-input placeholder="Y" [(ngModel)]="model.y"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div>
+    <button ion-button color="danger" (click)="doCalc()">Calc</button>
+  </div>
+  <div class="result-container">
+    <pre>{{result}}</pre>
+  </div>
+</ion-content>
